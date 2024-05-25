@@ -26,11 +26,6 @@ public class UsuarioControlador {
         return new ResponseEntity<>(usuarios, HttpStatus.OK);
     }
 
-    @GetMapping("/{idUsuario}/musicas")//Play list
-    public List<Musica> obtenerMusicasUsuario(@PathVariable int idUsuario) {
-        Usuario usuario = rep.findById(idUsuario).orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
-        return usuario.getMusicas();
-    }
 
     @PostMapping("/login")
     public ResponseEntity<Integer> loginUser(@RequestParam String nombre, @RequestParam String contrasena) {
