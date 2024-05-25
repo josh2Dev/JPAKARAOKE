@@ -29,4 +29,16 @@ public class UsuarioControlador {
         return new ResponseEntity<>(usuarios, HttpStatus.OK);
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<Integer> loginUser(@RequestParam String nombre, @RequestParam String contrasena) {
+        int resultado = rep.sp_karaoke_login(nombre, contrasena);
+        if (resultado == 1001) {
+            // Login exitoso
+            return ResponseEntity.ok(resultado); // Devuelve 1001 para indicar éxito
+        } else {
+            // Error en el login
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(resultado); // Devuelve 1002 para indicar error
+        }
+    }
+
 }
