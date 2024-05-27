@@ -4,10 +4,10 @@ import com.karaoke.jpakaraoke.INTERFACE.MusicaRep;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 
 import java.util.List;
 
@@ -27,6 +27,12 @@ public class MusicaControlador {
     public ResponseEntity<List<Musica>> getCuentas() {
         List<Musica> musicas = rep.findAll();
         return new ResponseEntity<>(musicas, HttpStatus.OK);
+    }
+
+        @GetMapping(value = "/listaGenerosMusica")
+    public ResponseEntity<List<String>> getListaGenerosMusicales() {
+        List<String> generosMusicales = rep.findDistinctGeneroMusica();
+        return new ResponseEntity<>(generosMusicales, HttpStatus.OK);
     }
 
 }
