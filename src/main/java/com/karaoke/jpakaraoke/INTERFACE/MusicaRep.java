@@ -6,8 +6,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
-
-
 @Repository
 public interface MusicaRep extends JpaRepository<Musica,Integer> {
 
