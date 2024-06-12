@@ -31,31 +31,5 @@ public class MusicaControlador {
         List<String> generosMusicales = rep.findDistinctGeneroMusica();
         return new ResponseEntity<>(generosMusicales, HttpStatus.OK);
     }
-/*
-    @DeleteMapping("/eliminarMusica/{id}")
-    public ResponseEntity<Void> eliminarMusica(@PathVariable Integer id) {
-        if (!rep.existsById(id)) {
-            return ResponseEntity.notFound().build();
-        }
-        rep.deleteById(id);
-        return ResponseEntity.noContent().build();
-    }
 
-    @PutMapping("/editarMusica/{id}")
-    public ResponseEntity<Musica> editarMusica(@PathVariable Integer id, @RequestBody Musica musicaDetalles) {
-        Optional<Musica> musicaOptional = rep.findById(id);
-        if (!musicaOptional.isPresent()) {
-            return ResponseEntity.notFound().build();
-        }
-
-        Musica musica = musicaOptional.get();
-        musica.setNombreMusica(musicaDetalles.getNombreMusica());
-        musica.setArtistaNombre(musicaDetalles.getArtistaNombre());
-        musica.setGeneroMusica(musicaDetalles.getGeneroMusica());
-
-        Musica musicaActualizada = rep.save(musica);
-        return ResponseEntity.ok(musicaActualizada);
-    }
-
-    */
 }
