@@ -40,7 +40,7 @@ public class MusicaControlador {
         rep.deleteById(id);
         return ResponseEntity.noContent().build();
     }
-
+/*
     @PutMapping("/editarMusica/{id}")
     public ResponseEntity<Musica> editarMusica(@PathVariable Integer id, @RequestBody Musica musicaDetalles) {
         Optional<Musica> musicaOptional = rep.findById(id);
@@ -56,4 +56,6 @@ public class MusicaControlador {
         Musica musicaActualizada = rep.save(musica);
         return ResponseEntity.ok(musicaActualizada);
     }
+
+    */
 }
