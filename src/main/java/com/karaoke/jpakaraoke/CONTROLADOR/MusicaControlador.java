@@ -31,7 +31,7 @@ public class MusicaControlador {
         List<String> generosMusicales = rep.findDistinctGeneroMusica();
         return new ResponseEntity<>(generosMusicales, HttpStatus.OK);
     }
-
+/*
     @DeleteMapping("/eliminarMusica/{id}")
     public ResponseEntity<Void> eliminarMusica(@PathVariable Integer id) {
         if (!rep.existsById(id)) {
@@ -40,7 +40,7 @@ public class MusicaControlador {
         rep.deleteById(id);
         return ResponseEntity.noContent().build();
     }
-/*
+
     @PutMapping("/editarMusica/{id}")
     public ResponseEntity<Musica> editarMusica(@PathVariable Integer id, @RequestBody Musica musicaDetalles) {
         Optional<Musica> musicaOptional = rep.findById(id);
